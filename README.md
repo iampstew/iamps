@@ -1,2 +1,2 @@
 # iamps
-Custom Front End BEM Responsive Framework
+BEM framework using gulp
