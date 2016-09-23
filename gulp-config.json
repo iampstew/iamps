@@ -1,0 +1,85 @@
+{
+    "browserSync" : {
+        "proxyURL": "foundation.local/dist/index.html",
+        "files" : [
+            "dist/css/*",
+            "dist/js/**/*",
+            "dist/*.html"
+        ]
+    },
+    "concat": {
+        "js": [
+            "node_modules/foundation-sites/dist/foundation.js",
+            "src/js/plugins/*.js",
+            "src/js/app.js"
+        ],
+        "name": "app.js",
+        "dest": "dist/js"
+    },
+    "sass": {
+        "files": "src/scss/**/app.scss",
+        "includePaths": [
+            "node_modules/foundation-sites/scss",
+            "node_modules/font-awesome/scss"
+        ],
+        "browsers": [
+            "> 1%",
+            "last 2 versions"
+        ],
+        "dest": "dist/css"
+    },
+    "assemble": {
+        "dest": "dist",
+        "data" : "src/templates/data/*.json",
+        "layouts" : "src/templates/layouts/*.hbs",
+        "pages" : "src/templates/pages/*.hbs",
+        "partials": "src/templates/partials/*.hbs"
+    },
+    "copy": {
+        "js": {
+            "files": [
+                "node_modules/jquery/dist/jquery.js"
+            ],
+            "dest": "dist/js/vendor"
+        },
+        "img": {
+            "files": [
+                "src/img/*"
+            ],
+            "dest": "dist/img"
+        },
+        "fonts": {
+            "files": [
+                "src/fonts/*",
+                "node_modules/font-awesome/fonts/*"
+            ],
+            "dest": "dist/fonts"
+        }
+    },
+    "lint" : {
+        "js" : {
+            "files" : [
+                "src/js/**/*.js"
+            ]
+        },
+        "scss" : {
+            "files" : [
+                "src/scss/**/*.scss",
+                "!src/scss/_settings.scss",
+                "!src/scss/_foundation-icons.scss"
+            ]
+        }
+    },
+    "modernizr": {
+        "files": "src/js/**/*.js",
+        "options": [
+            "setClasses",
+            "addTest",
+            "html5shiv",
+            "html5printshiv",
+            "testProp",
+            "fnBind"
+        ],
+        "dest": "dist/js/vendor"
+    }
+}
